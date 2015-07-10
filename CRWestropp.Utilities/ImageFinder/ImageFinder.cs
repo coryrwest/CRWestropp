@@ -152,19 +152,4 @@ namespace CRWestropp.Utilities.ImageFinder {
             return imageList.First();
         }
     }
-
-    public class WebHelpers {
-        public string GetSourceOfURL(string Url) {
-
-            HttpWebRequest myRequest = (HttpWebRequest)WebRequest.Create(Url);
-            myRequest.Method = "GET";
-            WebResponse myResponse = myRequest.GetResponse();
-            StreamReader sr = new StreamReader(myResponse.GetResponseStream(), System.Text.Encoding.UTF8);
-            string result = sr.ReadToEnd();
-            sr.Close();
-            myResponse.Close();
-
-            return result;
-        }
-    }
 }
